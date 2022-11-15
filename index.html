@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS Link -->
+    <link data-require="bootstrap@*" data-semver="3.3.5" rel="stylesheet"
+        href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link data-require="bootstrap@*" data-semver="3.3.5" rel="stylesheet"
+        href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/cosmo/bootstrap.min.css" />
+    <!-- Font awesome link -->
+    <link data-require="bootstrap@*" data-semver="3.3.5" rel="stylesheet"
+        href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <script data-require="bootstrap@*" data-semver="3.3.5"
+        src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Angular JS link -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.js"
+        integrity="sha512-klc+qN5PPscoGxSzFpetVsCr9sryi2e2vHwZKq43FdFyhSAa7vAqog/Ifl8tzg/8mBZiG2MAKhyjH5oPJp65EA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script data-require="angular.js@*" data-semver="1.3.0-beta.5"
+        src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
+    <!-- Personal script links -->
+    <script src="script.js"></script>
+    <script src="application.js"></script>
+
+</head>
+
+<body ng-controller="MainController">
+    <div class="jumbotron">
+        <h1 class="text-center">Celsius to Farenheit Coverter</h1>
+    </div>
+    <h3 class="text-center">Assignment 3 by Jawaher</h3>
+    <br>
+    <br>
+    <hr>
+    <form name="calc" ng-submit="toCalc(likes)" class="text-center">
+        <input type="number" step="any" required placeholder="Farenheit" ng-model="likes" />
+        <input type="submit" value="Convert to Celsius">
+    </form>
+
+    <p class="text-center">= {{obj.hello}} {{obj.cels}}</p>
+    <br>
+    <br>
+    <hr>
+
+    <form name="calc2" ng-submit="toFehr(number2)" class="text-center">
+        <input type="number" step="any" required placeholder="Celsius" ng-model="number2" />
+        <input type="submit" value="Covert to Farenheit">
+    </form>
+
+    <p class="text-center">= {{obj.hello2}} {{obj.fehr}}</p>
+
+</body>
+
+</html>
