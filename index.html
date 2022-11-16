@@ -6,7 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+    .text-center{
+      text-align: center;
+    }
+
+    .jumbotron{
+      background-color: skyblue;
+      text-align: center
+    }
+
+    </style>
     <!-- Bootstrap CSS Link -->
     <link data-require="bootstrap@*" data-semver="3.3.5" rel="stylesheet"
         href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
@@ -24,8 +35,35 @@
     <script data-require="angular.js@*" data-semver="1.3.0-beta.5"
         src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
     <!-- Personal script links -->
-    <script src="script.js"></script>
-    <script src="application.js"></script>
+    <script>
+    var MainController = function ($scope) {
+        var obj = { hello: null, cels: null, hello2: null, fehr: null }
+
+        function roundToTwo(num) {
+            return +(Math.round(num + "e+2") + "e-2")
+        }
+
+        var toCalc = function (likes) {
+            // formulae
+            obj.hello = roundToTwo(($scope.likes - 32) * (5 / 9));
+            obj.cels = "Degrees Celsius"
+        }
+
+        var toFehr = function (number2) {
+            // formulae
+            obj.hello2 = roundToTwo(($scope.number2 * (9 / 5) + 32));
+            obj.fehr = "Degrees Farenheit"
+        }
+
+        $scope.toFehr = toFehr;
+        $scope.toCalc = toCalc;
+        $scope.obj = obj;
+    };
+
+    </script>
+    <script>
+      var app = angular.module('app', []).controller('MainController', MainController);
+    </script>
 
 </head>
 
